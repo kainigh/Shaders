@@ -75,9 +75,9 @@ Shader"Unlit/NoiseTexture"
 	           //o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw);
     
 	           
-                v.vertex = vertexAnimFlag(v.vertex, v.texcoord.xy);
+               v.vertex = vertexAnimFlag(v.vertex, v.texcoord.xy);
 	           float displacement = tex2Dlod(_NoiseTex, v.texcoord * _NoiseTex_ST);
-	o.vertex = UnityObjectToClipPos(v.vertex + (v.normal * displacement * sin(_Height * _Time.y)));
+	           o.vertex = UnityObjectToClipPos(v.vertex + (v.normal * displacement * sin(_Height * _Time.y)));
 	           o.texcoord.xy = (v.texcoord.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw);
     
 	           

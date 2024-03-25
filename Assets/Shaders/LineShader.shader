@@ -47,8 +47,8 @@ Shader"Unlit/LineShader"
             {
 	           VertexOutput o;
                o.vertex = UnityObjectToClipPos(v.vertex);
-	           o.texcoord.xy = v.texcoord;
-	           o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+	           //o.texcoord.xy = v.texcoord;
+	           o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy) + _MainTex_ST.zw;
                return o;
 
             }
