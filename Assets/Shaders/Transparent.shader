@@ -36,12 +36,14 @@ Shader"Unlit/Transparent"
             vertexOutput output;
  
             output.tex = input.texcoord;
-            output.pos = UnityObjectToClipPos(input.vertex);
+	        output.pos = UnityObjectToClipPos(input.vertex);
             return output;
          }
 
          float4 frag(vertexOutput input) : COLOR
          {
+	        
+    
             float4 color =  tex2D(_MainTex, input.tex);  
             if (color.a > 0.2) // opaque back face?
             {
