@@ -62,6 +62,5 @@ Shader"Unlit/Transparent"
       }
 
      }
-   
-   Fallback "Unlit/Transparent"
+  
 }
